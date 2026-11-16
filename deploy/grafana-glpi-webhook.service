@@ -1,0 +1,25 @@
+[Unit]
+Description=Grafana to GLPI alerting bridge
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+User=grafana-glpi
+WorkingDirectory=/opt/grafana_glpi
+EnvironmentFile=/etc/grafana_glpi/env
+ExecStart=/usr/bin/gunicorn --bind 127.0.0.1:8787 --workers 1 grafana_glpi_webhook:app
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+
+# /etc/grafana_glpi/env (chmod 600), example:
+#   GLPI_URL=https://glpi.example.com/apirest.php
+#   GLPI_APP_TOKEN=...
+#   GLPI_USER_TOKEN=...
+#   GLPI_GROUP_ID=2
+#   GLPI_REQUESTER_ID=2
+#   WEBHOOK_SECRET=...
+#   SITES_FILE=/etc/grafana_glpi/sites.json
+#
+# One worker on purpose: incident state lives in a single JSON file.

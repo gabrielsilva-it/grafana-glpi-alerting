@@ -1,0 +1,10 @@
+{
+  "HQ": 2,
+  "BRANCH01": 3,
+  "BRANCH02": 4,
+  "BRANCH03": 5,
+  "HQ_SWITCHES": 2,
+  "ERP": 2,
+  "BACKUP": 2,
+  "INFRA": 2
+}

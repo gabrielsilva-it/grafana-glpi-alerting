@@ -1,0 +1,19 @@
+{
+  "BRANCH01": 6,
+  "BRANCH03": 8,
+  "BRANCH04": 9,
+  "BRANCH12": 12,
+  "BRANCH05": 5,
+  "BRANCH06": 51,
+  "BRANCH02": 55,
+  "BRANCH11": 43,
+  "BRANCH07": 53,
+  "BRANCH08": 7,
+  "HQ": 2,
+  "BRANCH09": 4,
+  "BRANCH10": 11,
+  "HQ_SWITCHES": 2,
+  "ERP": 2,
+  "BACKUP": 2,
+  "INFRA": 2
+}
