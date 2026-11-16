@@ -1,5 +1,7 @@
 # Grafana → GLPI Alerting Bridge
 
+[![tests](https://github.com/bisquilha/grafana-glpi-alerting/actions/workflows/tests.yml/badge.svg)](https://github.com/bisquilha/grafana-glpi-alerting/actions/workflows/tests.yml)
+
 A small Flask webhook that turns **Grafana alerts into GLPI service-desk tickets** and manages them like a person would: one ticket per incident, follow-ups for new symptoms, automatic solve/close on recovery, reopening if the problem comes back, and correlation so a single outage does not flood the service desk with tickets.
 
 Built and running in production for a multi-site company (headquarters + branches connected by SD-WAN/IPsec, monitored by Zabbix and Grafana). This is a generic, sanitised version: no company names, hosts, IPs or credentials.

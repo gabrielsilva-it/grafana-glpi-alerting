@@ -1,0 +1,21 @@
+name: tests
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - name: Ticket lifecycle
+        run: python tests/test_ticket_lifecycle.py src/grafana_glpi_webhook.py
+      - name: Tunnel correlation
+        run: python tests/test_tunnel_correlation.py src/grafana_glpi_webhook.py
+      - name: Backup / infrastructure alerts
+        run: python tests/test_backup_infra_alerts.py src/grafana_glpi_webhook.py
